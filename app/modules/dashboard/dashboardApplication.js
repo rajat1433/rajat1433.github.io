@@ -32,9 +32,9 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
 
     //education page state
     $stateProvider.state('app.GSoC', {
-        url: '/education',
+        url: '/GSoC',
         templateUrl: 'app/modules/dashboard/views/GSoC.html',
-        controller: 'EducationController',
+        controller: 'GSoC',
         controllerAs: 'vm',
         data: {
             pageTitle: 'Dashboard Home'
