@@ -3,9 +3,7 @@ Angular Bootstrap Dashboard is a web dashboard application based on Bootstrap an
 Angular Bootstrap Dashboard uses ui-router for routing purposes.
 
 ## Get The Dashboard
-
 * [Demo] (http://rajat1433.github.io/)
-
 
 ## Features
 * Multiple Themes
@@ -17,7 +15,6 @@ Angular Bootstrap Dashboard uses ui-router for routing purposes.
 * jQuery Knob
 * Chart.js
 * Owl Carousel
-
 
 A web application containing my portfolio.
 
