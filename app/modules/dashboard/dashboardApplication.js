@@ -31,11 +31,9 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     });
 
     //education page state
-    $stateProvider.state('app.education', {
-        url: '/education',
-        templateUrl: 'app/modules/dashboard/views/education.html',
-        controller: 'EducationController',
-        controllerAs: 'vm',
+    $stateProvider.state('app.gsoc', {
+        url: '/gsoc',
+        templateUrl: 'app/modules/dashboard/views/gsoc.html',
         data: {
             pageTitle: 'Dashboard Home'
         }
