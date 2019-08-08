@@ -34,7 +34,7 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state('app.GSoC', {
         url: '/GSoC',
         templateUrl: 'app/modules/dashboard/views/GSoC.html',
-        controller: 'GSoC',
+        controller: 'GSoCController',
         controllerAs: 'vm',
         data: {
             pageTitle: 'Dashboard Home'
