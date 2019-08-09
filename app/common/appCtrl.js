@@ -118,9 +118,9 @@ function ($rootScope, $scope, $state, $location, Flash,appSettings) {
             state: "skills"
         },
         {
-            title: "GSoC",
+            title: "Education",
             icon: "graduation-cap",
-            state: "GSoC"
+            state: "education"
         },
         {
             title: "Experience",
