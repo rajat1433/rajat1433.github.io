@@ -218,45 +218,45 @@ August 2018
                                        a much lower average-case running time although the worst case time
                                        complexity remains the same.</h4>
                                   <p class="text-bold">
-                                        Procedure. FindCandidates(p)
-                                        Input:
-                                        p: the shortest path removed from Q.
-                                        All nodes in G are green.
-                                        Result:
-                                        All candidate paths deviating from p are added to Q.
-                                        1 if (p = p1) then
-                                        2 u:= s
-                                        3 else
-                                        4 u := dev(p)
-                                        5 Call FindEdgesToRemove(p) to find Ed(p)
-                                        6 Remove all edges in Ed(p)
-                                        7 Set all nodes in subp(s, u) to red
-                                        8 for each node v ∈ subp(s, u)
-                                        9 Call GetUpStreamNodes(v) to find Yv
-                                        10 Set all nodes in Yv to yellow
-                                        11 Let Y= ∪
-                                        v∈subp(s,u)
-                                        Yv
-                                        12 Call FindExpressEdges(Y ∪ {u})
-                                        13 Set t to yellow
-                                        14 while (TRUE) /* infinite loop */
-                                        15 Remove edge (u, nextp(u))
-                                        16 Find a shortest u-t path r (yellow-node only)
-                                        17 Add the candidate path subp(s, u)  r to Q
-                                        18 if (nextp(u) = t)
-                                        19 exit the while loop
-                                        20 u := nextp(u)/* advance to next node */
-                                        21 Set u to red
-                                        22 Call GetUpStreamNodes(u) to find Yu
-                                        23 Set all nodes in Yu to yellow
-                                        24 for each node v ∈ Yu ∪ {u}
-                                        25 if |Xv| > 0 then
-                                        26 recover all express edges in Xv
-                                        27 Call FindExpressEdges(Yu ∪ {u})
-                                        28 Recover all express edges
-                                        29 Recover all removed edges
-                                        30 Set all yellow and red nodes back to green
-
+                                        Procedure. FindCandidates(p)<br>
+                                        Input:<br>
+                                        p: the shortest path removed from Q.<br>
+                                        All nodes in G are green.<br>
+                                        Result:<br>
+                                        All candidate paths deviating from p are added to Q.<br>
+                                        1 if (p = p1) then<br>
+                                        2 u:= s<br>
+                                        3 else<br>
+                                        4 u := dev(p)<br>
+                                        5 Call FindEdgesToRemove(p) to find Ed(p)<br>
+                                        6 Remove all edges in Ed(p)<br>
+                                        7 Set all nodes in subp(s, u) to red<br>
+                                        8 for each node v ∈ subp(s, u)<br>
+                                        9 Call GetUpStreamNodes(v) to find Yv<br>
+                                        10 Set all nodes in Yv to yellow<br>
+                                        11 Let Y= ∪<br>
+                                        v∈subp(s,u)<br>
+                                        Yv<br>
+                                        12 Call FindExpressEdges(Y ∪ {u})<br>
+                                        13 Set t to yellow<br>
+                                        14 while (TRUE) /* infinite loop */<br>
+                                        15 Remove edge (u, nextp(u))<br>
+                                        16 Find a shortest u-t path r (yellow-node only)<br>
+                                        17 Add the candidate path subp(s, u)  r to Q<br>
+                                        18 if (nextp(u) = t)<br>
+                                        19 exit the while loop<br>
+                                        20 u := nextp(u)/* advance to next node */<br>
+                                        21 Set u to red<br>
+                                        22 Call GetUpStreamNodes(u) to find Yu<br>
+                                        23 Set all nodes in Yu to yellow<br>
+                                        24 for each node v ∈ Yu ∪ {u}<br>
+                                        25 if |Xv| > 0 then<br>
+                                        26 recover all express edges in Xv<br>
+                                        27 Call FindExpressEdges(Yu ∪ {u})<br>
+                                        28 Recover all express edges<br>
+                                        29 Recover all removed edges<br>
+                                        30 Set all yellow and red nodes back to green<br>
+                                        <br>
 
                                   </p>
                                   <div class="timeline-footer">
