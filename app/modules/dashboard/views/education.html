@@ -29,7 +29,7 @@ August 2018
                       <li>
                           <i class="fa fa-graduation-cap bg-blue-gradient text-white"></i>
                           <div class="timeline-item">
-                              <h3 class="timeline-header"> Mathematics and Computing </h3>
+                              <h3 class="timeline-header"> Getting Started with SageMath </h3>
                           </div>
                       </li>
                       <li>
@@ -114,8 +114,72 @@ August 2018
                       <li>
                           <div class="timeline-item">
                               <div class="callout callout-success col-md-10 col-sm-8 col-xs-12">
-                                  <h4>.................</h4>
-                                  <p class="text-bold">.............</p>
+                                  <h4>Yen’s algorithm[1] computes source to destination k-shortest simple paths 
+                                      for a graph with non-negative edge cost. It can be broken down into 2 parts,
+                                      first part determining the first k-shortest path and the other part 
+                                      determining all other k shortest paths. It employs any shortest path
+                                      algorithm (for eg. Dijkstra’s algorithm) to find the best path and then
+                                      proceeds to find k - 1 deviations of the best path. Detailed algorithm
+                                      and details of the same can be found on Wikipedia/Yen’s_algorithm . The
+                                      Time Complexity of Yen’s algorithm is dependent on the shortest path 
+                                      algorithm used in the computation of the spur paths. If Dijkstra’s
+                                      algorithm is used which has a worst case time complexity of O(N^2),
+                                      the time complexity of Yen’s algorithm becomes O(kN3). Here N is the
+                                      number of vertices in the graph.</h4>
+                                  <p class="text-bold">
+
+
+                                        function YenKSP(Graph, source, sink, K):<br>
+                                    
+                                        // Determine the shortest path from the source to the sink.<br>
+                                        A[0] = Dijkstra(Graph, source, sink);<br>
+                                        // Initialize the set to store the potential kth shortest path.<br>
+                                        B = [];<br>
+                                        <br>
+                                        for k from 1 to K:<br>
+                                            // The spur node ranges from the first node to the next to last node in the previous k-shortest path.<br>
+                                            for i from 0 to size(A[k − 1]) − 2:<br>
+                                            <br>
+                                                // Spur node is retrieved from the previous k-shortest path, k − 1.<br>
+                                                spurNode = A[k-1].node(i);<br>
+                                                // The sequence of nodes from the source to the spur node of the previous k-shortest path.<br>
+                                                rootPath = A[k-1].nodes(0, i);<br>
+                                                <br>
+                                                for each path p in A:<br>
+                                                    if rootPath == p.nodes(0, i):<br>
+                                                        // Remove the links that are part of the previous shortest paths which share the same root path.<br>
+                                                        remove p.edge(i,i + 1) from Graph;<br>
+                                                        <br>
+                                                for each node rootPathNode in rootPath except spurNode:<br>
+                                                    remove rootPathNode from Graph;<br>
+                                                    <br>
+                                                // Calculate the spur path from the spur node to the sink.<br>
+                                                spurPath = Dijkstra(Graph, spurNode, sink);<br>
+                                                <br>
+                                                // Entire path is made up of the root path and spur path.<br>
+                                                totalPath = rootPath + spurPath;<br>
+                                                // Add the potential k-shortest path to the heap.<br>
+                                                B.append(totalPath);<br>
+                                                <br>
+                                                // Add back the edges and nodes that were removed from the graph.<br>
+                                                restore edges to Graph;<br>
+                                                restore nodes in rootPath to Graph;<br>
+                                                <br>
+                                            if B is empty:<br>
+                                                // This handles the case of there being no spur paths, or no spur paths left.<br>
+                                                // This could happen if the spur paths have already been exhausted (added to A), <br>
+                                                // or there are no spur paths at all - such as when both the source and sink vertices<br> 
+                                                // lie along a "dead end".<br>
+                                                break;<br>
+                                            // Sort the potential k-shortest paths by cost.<br>
+                                            B.sort();<br>
+                                            // Add the lowest cost path becomes the k-shortest path.<br>
+                                            A[k] = B[0];<br>
+                                            B.pop();<br>
+                                            <br>
+                                        return A;<br>
+                                        <br>
+                                  </p>
                                   <div class="timeline-footer">
                                       <a class="btn btn-primary btn-xs" data-ng-click="vm.hscMarks=!vm.hscMarks" data-ng-if="!vm.hscMarks">Show Marks</a>
                                       <a class="btn btn-danger btn-xs" data-ng-click="vm.hscMarks=!vm.hscMarks" data-ng-if="vm.hscMarks">Hide Marks</a>
