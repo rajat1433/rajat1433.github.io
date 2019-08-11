@@ -29,7 +29,27 @@ August 2018
                       <li>
                           <i class="fa fa-graduation-cap bg-blue-gradient text-white"></i>
                           <div class="timeline-item">
-                              <h3 class="timeline-header"> Getting Started with SageMath </h3>
+                            <h3 class="timeline-header"> <h1>OVERVIEW</h1> 
+                                <br><br> 
+                                My journey of GSOC with SageMath has been a fun-filled and very productive as I spent my 
+                                summer in implementing and improving various algorithms in the graph module of SageMath
+                                under the guidance of Dr. David Coudert as my mentor under Google Summer of Code 2019 
+                                program.
+                                <br>
+                                The project spanning over a peroid of around 3 months, consisted in improving and 
+                                implementation of new algorithms for enumeration of k shortest paths between a 
+                                source and a destination vertex. As a first step certain methods were improved
+                                and cleaned which served as dependencies for implementing new algorithms for k shortest
+                                paths. Then at first Yen's algorithm for k shortest simple paths in a graph was implemented
+                                followed by improvements such as Lawler's modification.
+                                Feng's algorithm which finds k shortest paths in a directed graph efficiently was
+                                implemented as a second step. After implementing both of these methods they were tested
+                                for corner cases and other bugs. Then a separate module path_enumeration.pyx was made in
+                                the graph module of SageMath. All the methods related to shortest paths between source and 
+                                destination vertices were moved in this module. Then the last step was Cythonizing the
+                                methods present in this module for speed improvements.
+                            
+                            </h3>
                           </div>
                       </li>
                       <li>
@@ -225,9 +245,9 @@ August 2018
                                         Result:<br>
                                         All candidate paths deviating from p are added to Q.<br>
                                         1 if (p = p1) then<br>
-                                        2 u:= s<br>
+                                        2     u:= s<br>
                                         3 else<br>
-                                        4 u := dev(p)<br>
+                                        4     u := dev(p)<br>
                                         5 Call FindEdgesToRemove(p) to find Ed(p)<br>
                                         6 Remove all edges in Ed(p)<br>
                                         7 Set all nodes in subp(s, u) to red<br>
