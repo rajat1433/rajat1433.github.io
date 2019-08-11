@@ -203,8 +203,62 @@ August 2018
                       <li>
                           <div class="timeline-item">
                               <div class="callout callout-danger col-md-10 col-sm-8 col-xs-12">
-                                  <h4>...........</h4>
-                                  <p class="text-bold">........</p>
+                                  <h4>Gang Feng[4] proposed an algorithm similar to Yen’s algorithm but using
+                                       a node classification technique to reduce the average running time of 
+                                       Yen’s algorithm. When generating a candidate path deviating from the 
+                                       current shortest path at a certain node, each node in the graph is 
+                                       assigned one of the 3 colours namely red, green and yellow. A node on
+                                       the prefix is assigned a red color, a node that can reach t 
+                                       (the destination node) through a shortest path without visiting a 
+                                       red node is assigned a green color, and all other nodes are assigned
+                                       a yellow color. When searching for the suffix of a candidate path, 
+                                       all green nodes are be bypassed, and only Dijkstra’s algorithm need 
+                                       to be applied to find an all-yellow-node subpath. Since on average 
+                                       the number of yellow nodes is much smaller than N this algorithm has
+                                       a much lower average-case running time although the worst case time
+                                       complexity remains the same.</h4>
+                                  <p class="text-bold">
+                                        Procedure. FindCandidates(p)
+                                        Input:
+                                        p: the shortest path removed from Q.
+                                        All nodes in G are green.
+                                        Result:
+                                        All candidate paths deviating from p are added to Q.
+                                        1 if (p = p1) then
+                                        2 u:= s
+                                        3 else
+                                        4 u := dev(p)
+                                        5 Call FindEdgesToRemove(p) to find Ed(p)
+                                        6 Remove all edges in Ed(p)
+                                        7 Set all nodes in subp(s, u) to red
+                                        8 for each node v ∈ subp(s, u)
+                                        9 Call GetUpStreamNodes(v) to find Yv
+                                        10 Set all nodes in Yv to yellow
+                                        11 Let Y= ∪
+                                        v∈subp(s,u)
+                                        Yv
+                                        12 Call FindExpressEdges(Y ∪ {u})
+                                        13 Set t to yellow
+                                        14 while (TRUE) /* infinite loop */
+                                        15 Remove edge (u, nextp(u))
+                                        16 Find a shortest u-t path r (yellow-node only)
+                                        17 Add the candidate path subp(s, u)  r to Q
+                                        18 if (nextp(u) = t)
+                                        19 exit the while loop
+                                        20 u := nextp(u)/* advance to next node */
+                                        21 Set u to red
+                                        22 Call GetUpStreamNodes(u) to find Yu
+                                        23 Set all nodes in Yu to yellow
+                                        24 for each node v ∈ Yu ∪ {u}
+                                        25 if |Xv| > 0 then
+                                        26 recover all express edges in Xv
+                                        27 Call FindExpressEdges(Yu ∪ {u})
+                                        28 Recover all express edges
+                                        29 Recover all removed edges
+                                        30 Set all yellow and red nodes back to green
+
+
+                                  </p>
                                   <div class="timeline-footer">
                                       <a class="btn btn-primary btn-xs" data-ng-click="vm.sslcMarks=!vm.sslcMarks" data-ng-if="!vm.sslcMarks">Show Marks</a>
                                       <a class="btn btn-danger btn-xs" data-ng-click="vm.sslcMarks=!vm.sslcMarks" data-ng-if="vm.sslcMarks">Hide Marks</a>
