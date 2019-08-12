@@ -304,27 +304,32 @@ August 2018
                                         Cython variable declaration and Cython data structures.
                                     </h4>
                                     <p class="text-bold">
-                                    <h1>Usage of k shortest paths between a source and destination vertex in SageMath looks like:</h1>
+                                    <h2>Usage of k shortest paths between a source and destination vertex in SageMath looks like:</h2>
                                     <br>
                                     sage: g = DiGraph([(1, 2, 1), (2, 3, 1), (3, 4, 1), (4, 10, 1), (1, 5, 2), (5, 6, 1),
                                                        (6, 7, 1), (7, 10, 1), (1, 8, 3), (8, 9, 3), (9, 10, 1)])
                                                        <br>
                                                        <br>
                                     sage: g.show()
-                                    <img class="profile-user-img img-responsive" src="../../../../images/home/graph.png" alt="Graph">
+                                    <img src="../../../../images/home/graph.png" alt="Graph">
                                     <br>
                                     sage: list(g.shortest_simple_paths(1, 10, by_weight = True, algorithm = "Yen", report_weight = True))
+                                    <br>
                                     [(4, [1, 2, 3, 4, 10]), (5, [1, 5, 6, 7, 10]), (7, [1, 8, 9, 10])]
                                     <br>
                                     <br>
                                     sage: list(g.shortest_simple_paths(1, 10, by_weight = True, algorithm = "Feng", report_weight = True))
+                                    <br>
                                     [(4, [1, 2, 3, 4, 10]), (5, [1, 5, 6, 7, 10]), (7, [1, 8, 9, 10])]
                                     <br>
                                     <br>
                                     sage: list(g.shortest_simple_paths(1, 10, by_weight = True, algorithm = "Yen", report_weight = True, report_edges = True))
+                                    <br>
                                     [(4, [(1, 2), (2, 3), (3, 4), (4, 10)]),
-                                     (5, [(1, 5), (5, 6), (6, 7), (7, 10)]),
-                                     (7, [(1, 8), (8, 9), (9, 10)])]
+                                    <br>
+                                    (5, [(1, 5), (5, 6), (6, 7), (7, 10)]),
+                                    <br>
+                                    (7, [(1, 8), (8, 9), (9, 10)])]
                                      <br>
                                      <br>
   
