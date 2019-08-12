@@ -154,29 +154,29 @@ August 2018
                                   <p class="text-bold">
 
 
-                                        function YenKSP(Graph, source, sink, K):<br>
+                                        <b>function</b> YenKSP(Graph, source, sink, K):<br>
                                     
-                                        // Determine the shortest path from the source to the sink.<br>
-                                        A[0] = Dijkstra(Graph, source, sink);<br>
-                                        // Initialize the set to store the potential kth shortest path.<br>
-                                        B = [];<br>
+                                        &emsp;// Determine the shortest path from the source to the sink.<br>
+                                        &emsp;A[0] = Dijkstra(Graph, source, sink);<br>
+                                        &emsp;// Initialize the set to store the potential kth shortest path.<br>
+                                        &emsp;B = [];<br>
                                         <br>
-                                        for k from 1 to K:<br>
-                                            // The spur node ranges from the first node to the next to last node in the previous k-shortest path.<br>
-                                            for i from 0 to size(A[k − 1]) − 2:<br>
+                                        &emsp;for k from 1 to K:<br>
+                                        &emsp;&emsp;// The spur node ranges from the first node to the next to last node in the previous k-shortest path.<br>
+                                        &emsp;&emsp;for i from 0 to size(A[k − 1]) − 2:<br>
                                             <br>
-                                                // Spur node is retrieved from the previous k-shortest path, k − 1.<br>
-                                                spurNode = A[k-1].node(i);<br>
-                                                // The sequence of nodes from the source to the spur node of the previous k-shortest path.<br>
-                                                rootPath = A[k-1].nodes(0, i);<br>
+                                            &emsp;&emsp;&emsp; // Spur node is retrieved from the previous k-shortest path, k − 1.<br>
+                                            &emsp;&emsp;&emsp;   spurNode = A[k-1].node(i);<br>
+                                            &emsp;&emsp;&emsp;    // The sequence of nodes from the source to the spur node of the previous k-shortest path.<br>
+                                            &emsp;&emsp;&emsp;    rootPath = A[k-1].nodes(0, i);<br>
                                                 <br>
-                                                for each path p in A:<br>
-                                                    if rootPath == p.nodes(0, i):<br>
-                                                        // Remove the links that are part of the previous shortest paths which share the same root path.<br>
-                                                        remove p.edge(i,i + 1) from Graph;<br>
+                                                &emsp;&emsp;&emsp;    for each path p in A:<br>
+                                                &emsp;&emsp;&emsp;&emsp;    if rootPath == p.nodes(0, i):<br>
+                                                &emsp;&emsp;&emsp;&emsp;&emsp;        // Remove the links that are part of the previous shortest paths which share the same root path.<br>
+                                                &emsp;&emsp;&emsp;&emsp;&emsp;        remove p.edge(i,i + 1) from Graph;<br>
                                                         <br>
-                                                for each node rootPathNode in rootPath except spurNode:<br>
-                                                    remove rootPathNode from Graph;<br>
+                                                &emsp;&emsp;&emsp;for each node rootPathNode in rootPath except spurNode:<br>
+                                                &emsp;&emsp;&emsp;&emsp;   remove rootPathNode from Graph;<br>
                                                     <br>
                                                 // Calculate the spur path from the spur node to the sink.<br>
                                                 spurPath = Dijkstra(Graph, spurNode, sink);<br>
@@ -247,9 +247,9 @@ August 2018
                                         Result:<br>
                                         All candidate paths deviating from p are added to Q.<br>
                                         1 if (p = p1) then<br>
-                                        2 &nbsp;    u:= s<br>
+                                        2 &emsp;    u:= s<br>
                                         3 else<br>
-                                        4 &nbsp;    u := dev(p)<br>
+                                        4 &emsp;    u := dev(p)<br>
                                         5 Call FindEdgesToRemove(p) to find Ed(p)<br>
                                         6 Remove all edges in Ed(p)<br>
                                         7 Set all nodes in subp(s, u) to red<br>
