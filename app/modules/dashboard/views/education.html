@@ -245,37 +245,37 @@ August 2018
                                         &emsp;All nodes in G are green.<br>
                                         Result:<br>
                                         &emsp;All candidate paths deviating from p are added to Q.<br>
-                                        1 if (p = p1) then<br>
-                                        2 &emsp;    u:= s<br>
-                                        3 else<br>
-                                        4 &emsp;    u := dev(p)<br>
-                                        5 &emsp;Call FindEdgesToRemove(p) to find E<sup>d</sup>(p)<br>
-                                        6 &emsp;Remove all edges in E<sup>d</sup>(p)<br>
-                                        7 Set all nodes in sub<sub>p</sub>(s, u) to red<br>
-                                        8 for each node v ∈ sub<sub>p</sub>(s, u)<br>
-                                        9 &emsp;Call GetUpStreamNodes(v) to find Y<sub>v</sub><br>
-                                        10 &emsp;Set all nodes in Y<sub>v</sub> to yellow<br>
-                                        11 Let Y = U<sub>v</sub>Y<sub>v</sub> <br>
+                                        1. if (p = p1) then<br>
+                                        2. &emsp;    u:= s<br>
+                                        3. else<br>
+                                        4. &emsp;    u := dev(p)<br>
+                                        5. &emsp;Call FindEdgesToRemove(p) to find E<sup>d</sup>(p)<br>
+                                        6. &emsp;Remove all edges in E<sup>d</sup>(p)<br>
+                                        7. Set all nodes in sub<sub>p</sub>(s, u) to red<br>
+                                        8. for each node v ∈ sub<sub>p</sub>(s, u)<br>
+                                        9. &emsp;Call GetUpStreamNodes(v) to find Y<sub>v</sub><br>
+                                        10. &emsp;Set all nodes in Y<sub>v</sub> to yellow<br>
+                                        11. Let Y = U<sub>v</sub>Y<sub>v</sub> <br>
                                         &emsp;where v∈sub<sub>p</sub>(s,u)<br>
-                                        12 Call FindExpressEdges(Y&ensp; ∪&ensp; {u})<br>
-                                        13 Set t to yellow<br>
-                                        14 while (TRUE) /* infinite loop */<br>
-                                        15 &emsp;Remove edge (u, next<sub>p</sub>(u))<br>
-                                        16 &emsp;Find a shortest u-t path r (yellow-node only)<br>
-                                        17 &emsp;Add the candidate path sub<sub>p</sub>(s, u) ⟗ r to Q<br>
-                                        18 &emsp;if (next<sub>p</sub>(u) = t)<br>
-                                        19 &emsp;&emsp;exit the while loop<br>
-                                        20 &emsp;u := next<sub>p</sub>(u)/* advance to next node */<br>
-                                        21 &emsp;Set u to red<br>
-                                        22 &emsp;Call GetUpStreamNodes(u) to find Yu<br>
-                                        23 &emsp;Set all nodes in Y<sub>u</sub> to yellow<br>
-                                        24 &emsp;for each node v ∈ Y<sub>u</sub>&ensp; ∪&ensp;{u}<br>
-                                        25 &emsp;&emsp;if |X<sub>v</sub>| > 0 then<br>
-                                        26 &emsp;&emsp;&emsp;recover all express edges in X<sub>v</sub><br>
-                                        27 &emsp;Call FindExpressEdges(Y<sub>u</sub> ∪ {u})<br>
-                                        28 Recover all express edges<br>
-                                        29 Recover all removed edges<br>
-                                        30 Set all yellow and red nodes back to green<br>
+                                        12. Call FindExpressEdges(Y&ensp; ∪&ensp; {u})<br>
+                                        13. Set t to yellow<br>
+                                        14. while (TRUE) /* infinite loop */<br>
+                                        15. &emsp;Remove edge (u, next<sub>p</sub>(u))<br>
+                                        16. &emsp;Find a shortest u-t path r (yellow-node only)<br>
+                                        17. &emsp;Add the candidate path sub<sub>p</sub>(s, u) ⟗ r to Q<br>
+                                        18. &emsp;if (next<sub>p</sub>(u) = t)<br>
+                                        19. &emsp;&emsp;exit the while loop<br>
+                                        20. &emsp;u := next<sub>p</sub>(u)/* advance to next node */<br>
+                                        21. &emsp;Set u to red<br>
+                                        22. &emsp;Call GetUpStreamNodes(u) to find Yu<br>
+                                        23. &emsp;Set all nodes in Y<sub>u</sub> to yellow<br>
+                                        24. &emsp;for each node v ∈ Y<sub>u</sub>&ensp; ∪&ensp;{u}<br>
+                                        25. &emsp;&emsp;if |X<sub>v</sub>| > 0 then<br>
+                                        26. &emsp;&emsp;&emsp;recover all express edges in X<sub>v</sub><br>
+                                        27. &emsp;Call FindExpressEdges(Y<sub>u</sub> ∪ {u})<br>
+                                        28. Recover all express edges<br>
+                                        29. Recover all removed edges<br>
+                                        30. Set all yellow and red nodes back to green<br>
                                         <br>
 
                                   </p>
@@ -302,15 +302,31 @@ August 2018
                                         The methods such as all_simple_paths, all_paths_iterator, _all_paths_iterator, 
                                         feng_k_shortest_simple_paths, yen_k_shortest_simple_paths were cythonized using
                                         Cython variable declaration and Cython data structures.
-
                                     </h4>
                                     <p class="text-bold">
-                                    
-                                    Usage of k shortest paths between a source and destination vertex in SageMath looks like:
+                                    <h1>Usage of k shortest paths between a source and destination vertex in SageMath looks like:</h1>
+                                    <br>
+                                    sage: g = DiGraph([(1, 2, 1), (2, 3, 1), (3, 4, 1), (4, 10, 1), (1, 5, 2), (5, 6, 1),
+                                                       (6, 7, 1), (7, 10, 1), (1, 8, 3), (8, 9, 3), (9, 10, 1)])
+                                                       <br>
+                                                       <br>
+                                    sage: g.show()
+                                    <img class="profile-user-img img-responsive" src="../../../../images/home/graph.png" alt="Graph">
+                                    <br>
+                                    sage: list(g.shortest_simple_paths(1, 10, by_weight = True, algorithm = "Yen", report_weight = True))
+                                    [(4, [1, 2, 3, 4, 10]), (5, [1, 5, 6, 7, 10]), (7, [1, 8, 9, 10])]
                                     <br>
                                     <br>
-                                    
-                                        
+                                    sage: list(g.shortest_simple_paths(1, 10, by_weight = True, algorithm = "Feng", report_weight = True))
+                                    [(4, [1, 2, 3, 4, 10]), (5, [1, 5, 6, 7, 10]), (7, [1, 8, 9, 10])]
+                                    <br>
+                                    <br>
+                                    sage: list(g.shortest_simple_paths(1, 10, by_weight = True, algorithm = "Yen", report_weight = True, report_edges = True))
+                                    [(4, [(1, 2), (2, 3), (3, 4), (4, 10)]),
+                                     (5, [(1, 5), (5, 6), (6, 7), (7, 10)]),
+                                     (7, [(1, 8), (8, 9), (9, 10)])]
+                                     <br>
+                                     <br>
   
                                     </p>
                                     
