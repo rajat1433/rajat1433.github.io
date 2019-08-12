@@ -156,10 +156,10 @@ August 2018
 
                                         <b>function</b> YenKSP(Graph, source, sink, K):<br>
                                     
-                                        &ensp;// Determine the shortest path from the source to the sink.<br>
-                                        &ensp;A[0] = Dijkstra(Graph, source, sink);<br>
-                                        &ensp;// Initialize the set to store the potential kth shortest path.<br>
-                                        &ensp;B = [];<br>
+                                        &emsp;// Determine the shortest path from the source to the sink.<br>
+                                        &emsp;A[0] = Dijkstra(Graph, source, sink);<br>
+                                        &emsp;// Initialize the set to store the potential kth shortest path.<br>
+                                        &emsp;B = [];<br>
                                         <br>
                                         &emsp;for k from 1 to K:<br>
                                         &emsp;&emsp;// The spur node ranges from the first node to the next to last node in the previous k-shortest path.<br>
@@ -173,36 +173,36 @@ August 2018
                                                 &emsp;&emsp;&emsp;    for each path p in A:<br>
                                                 &emsp;&emsp;&emsp;&emsp;    if rootPath == p.nodes(0, i):<br>
                                                 &emsp;&emsp;&emsp;&emsp;&emsp;        // Remove the links that are part of the previous shortest paths which share the same root path.<br>
-                                                &emsp;&emsp;&emsp;&emsp;&emsp;        remove p.edge(i,i + 1) from Graph;<br>
+                                                &emsp;&emsp;&emsp;&emsp;&emsp;        remove p.edge(i, i + 1) from Graph;<br>
                                                         <br>
                                                 &emsp;&emsp;&emsp;for each node rootPathNode in rootPath except spurNode:<br>
                                                 &emsp;&emsp;&emsp;&emsp;   remove rootPathNode from Graph;<br>
                                                     <br>
-                                                // Calculate the spur path from the spur node to the sink.<br>
-                                                spurPath = Dijkstra(Graph, spurNode, sink);<br>
+                                                    &emsp;&emsp;&emsp;// Calculate the spur path from the spur node to the sink.<br>
+                                                    &emsp;&emsp;&emsp;spurPath = Dijkstra(Graph, spurNode, sink);<br>
                                                 <br>
-                                                // Entire path is made up of the root path and spur path.<br>
-                                                totalPath = rootPath + spurPath;<br>
-                                                // Add the potential k-shortest path to the heap.<br>
-                                                B.append(totalPath);<br>
+                                                &emsp;&emsp;&emsp;// Entire path is made up of the root path and spur path.<br>
+                                                &emsp;&emsp;&emsp;totalPath = rootPath + spurPath;<br>
+                                                &emsp;&emsp;&emsp;// Add the potential k-shortest path to the heap.<br>
+                                                &emsp;&emsp;&emsp;B.append(totalPath);<br>
                                                 <br>
-                                                // Add back the edges and nodes that were removed from the graph.<br>
-                                                restore edges to Graph;<br>
-                                                restore nodes in rootPath to Graph;<br>
+                                                &emsp;&emsp;&emsp;// Add back the edges and nodes that were removed from the graph.<br>
+                                                &emsp;&emsp;&emsp;restore edges to Graph;<br>
+                                                &emsp;&emsp;&emsp;restore nodes in rootPath to Graph;<br>
                                                 <br>
-                                            if B is empty:<br>
-                                                // This handles the case of there being no spur paths, or no spur paths left.<br>
-                                                // This could happen if the spur paths have already been exhausted (added to A), <br>
-                                                // or there are no spur paths at all - such as when both the source and sink vertices<br> 
-                                                // lie along a "dead end".<br>
-                                                break;<br>
-                                            // Sort the potential k-shortest paths by cost.<br>
-                                            B.sort();<br>
-                                            // Add the lowest cost path becomes the k-shortest path.<br>
-                                            A[k] = B[0];<br>
-                                            B.pop();<br>
+                                                &emsp;&emsp;if B is empty:<br>
+                                                &emsp;&emsp;&emsp;// This handles the case of there being no spur paths, or no spur paths left.<br>
+                                                &emsp;&emsp;&emsp;// This could happen if the spur paths have already been exhausted (added to A), <br>
+                                                &emsp;&emsp;&emsp;// or there are no spur paths at all - such as when both the source and sink vertices<br> 
+                                                &emsp;&emsp;&emsp;// lie along a "dead end".<br>
+                                                &emsp;&emsp;&emsp;break;<br>
+                                                &emsp;&emsp;// Sort the potential k-shortest paths by cost.<br>
+                                                &emsp;&emsp;B.sort();<br>
+                                                &emsp;&emsp;// Add the lowest cost path becomes the k-shortest path.<br>
+                                                &emsp;&emsp;A[k] = B[0];<br>
+                                                &emsp;&emsp;B.pop();<br>
                                             <br>
-                                        return A;<br>
+                                            &emsp;return A;<br>
                                         <br>
                                   </p>
                                  
