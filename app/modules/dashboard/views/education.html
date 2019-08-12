@@ -141,15 +141,14 @@ August 2018
                               <div class="callout callout-success col-md-10 col-sm-8 col-xs-12">
                                   <h4>Yen’s algorithm[1] computes source to destination k-shortest simple paths 
                                       for a graph with non-negative edge cost. It can be broken down into 2 parts,
-                                      first part determining the first k-shortest path and the other part 
+                                      first part determining the first k-shortest path and the second part 
                                       determining all other k shortest paths. It employs any shortest path
                                       algorithm (for eg. Dijkstra’s algorithm) to find the best path and then
-                                      proceeds to find k - 1 deviations of the best path. Detailed algorithm
-                                      and details of the same can be found on Wikipedia/Yen’s_algorithm . The
+                                      proceeds to find k - 1 deviations of the best path. The
                                       Time Complexity of Yen’s algorithm is dependent on the shortest path 
                                       algorithm used in the computation of the spur paths. If Dijkstra’s
-                                      algorithm is used which has a worst case time complexity of O(N^2),
-                                      the time complexity of Yen’s algorithm becomes O(kN3). Here N is the
+                                      algorithm is used which has a worst case time complexity of O(N^<sup>2</sup>),
+                                      the time complexity of Yen’s algorithm becomes O(kN<sup>3</sup>). Here N is the
                                       number of vertices in the graph.</h4>
                                   <p class="text-bold">
 
@@ -242,39 +241,38 @@ August 2018
                                   <p class="text-bold">
                                         Procedure. FindCandidates(p)<br>
                                         Input:<br>
-                                        p: the shortest path removed from Q.<br>
-                                        All nodes in G are green.<br>
+                                        &emsp;p: the shortest path removed from Q.<br>
+                                        &emsp;All nodes in G are green.<br>
                                         Result:<br>
-                                        All candidate paths deviating from p are added to Q.<br>
+                                        &emsp;All candidate paths deviating from p are added to Q.<br>
                                         1 if (p = p1) then<br>
                                         2 &emsp;    u:= s<br>
                                         3 else<br>
                                         4 &emsp;    u := dev(p)<br>
-                                        5 Call FindEdgesToRemove(p) to find Ed(p)<br>
-                                        6 Remove all edges in Ed(p)<br>
-                                        7 Set all nodes in subp(s, u) to red<br>
-                                        8 for each node v ∈ subp(s, u)<br>
-                                        9 Call GetUpStreamNodes(v) to find Yv<br>
-                                        10 Set all nodes in Yv to yellow<br>
-                                        11 Let Y= ∪<br>
-                                        v∈subp(s,u)<br>
-                                        Yv<br>
-                                        12 Call FindExpressEdges(Y ∪ {u})<br>
+                                        5 &emsp;Call FindEdgesToRemove(p) to find E<sup>d</sup>(p)<br>
+                                        6 &emsp;Remove all edges in E<sup>d</sup>(p)<br>
+                                        7 Set all nodes in sub<sub>p</sub>(s, u) to red<br>
+                                        8 for each node v ∈ sub<sub>p</sub>(s, u)<br>
+                                        9 &emsp;Call GetUpStreamNodes(v) to find Y<sub>v</sub><br>
+                                        10 &emsp;Set all nodes in Y<sub>v</sub> to yellow<br>
+                                        11 Let Y = U<sub>v</sub>Y<sub>v</sub> <br>
+                                        &emsp;where v∈sub<sub>p</sub>(s,u)<br>
+                                        12 Call FindExpressEdges(Y&ensp; ∪&ensp; {u})<br>
                                         13 Set t to yellow<br>
                                         14 while (TRUE) /* infinite loop */<br>
-                                        15 Remove edge (u, nextp(u))<br>
-                                        16 Find a shortest u-t path r (yellow-node only)<br>
-                                        17 Add the candidate path subp(s, u)  r to Q<br>
-                                        18 if (nextp(u) = t)<br>
-                                        19 exit the while loop<br>
-                                        20 u := nextp(u)/* advance to next node */<br>
-                                        21 Set u to red<br>
-                                        22 Call GetUpStreamNodes(u) to find Yu<br>
-                                        23 Set all nodes in Yu to yellow<br>
-                                        24 for each node v ∈ Yu ∪ {u}<br>
-                                        25 if |Xv| > 0 then<br>
-                                        26 recover all express edges in Xv<br>
-                                        27 Call FindExpressEdges(Yu ∪ {u})<br>
+                                        15 &emsp;Remove edge (u, next<sub>p</sub>(u))<br>
+                                        16 &emsp;Find a shortest u-t path r (yellow-node only)<br>
+                                        17 &emsp;Add the candidate path sub<sub>p</sub>(s, u) ⟗ r to Q<br>
+                                        18 &emsp;if (next<sub>p</sub>(u) = t)<br>
+                                        19 &emsp;&emsp;exit the while loop<br>
+                                        20 &emsp;u := next<sub>p</sub>(u)/* advance to next node */<br>
+                                        21 &emsp;Set u to red<br>
+                                        22 &emsp;Call GetUpStreamNodes(u) to find Yu<br>
+                                        23 &emsp;Set all nodes in Y<sub>u</sub> to yellow<br>
+                                        24 &emsp;for each node v ∈ Y<sub>u</sub>&ensp; ∪&ensp;{u}<br>
+                                        25 &emsp;&emsp;if |X<sub>v</sub>| > 0 then<br>
+                                        26 &emsp;&emsp;&emsp;recover all express edges in X<sub>v</sub><br>
+                                        27 &emsp;Call FindExpressEdges(Y<sub>u</sub> ∪ {u})<br>
                                         28 Recover all express edges<br>
                                         29 Recover all removed edges<br>
                                         30 Set all yellow and red nodes back to green<br>
