@@ -133,7 +133,13 @@ August 2018
                       <li>
                           <i class="fa fa-pencil bg-green-gradient text-white"></i>
                           <div class="timeline-item">
-                              <h3 class="timeline-header">Implementing the Yen's algorithm[1] for finding k shortest simple paths between a source and destination node in a graph. </h3>
+                              <h3 class="timeline-header">Implementing the Yen's algorithm[1] for finding k shortest simple paths between a source and destination node in a graph.
+                            <br>
+                            Related Tickets:
+                            <br>
+                            <a href="https://trac.sagemath.org/ticket/27859"><b> #27859</b></a> Implementing the Yen's algorithm and its improved versions
+                                <br>
+                            </h3>
                           </div>
                       </li>
                       <li>
@@ -219,6 +225,14 @@ August 2018
                           <i class="fa fa-pencil bg-red-gradient text-white"></i>
                           <div class="timeline-item">
                               <h3 class="timeline-header">Implementation of Feng's algorithm[2] for finding k shortest paths between a source and destination node in a directed graph. </h3>
+                          
+                              Related Tickets:
+                              <br>
+                              <a href="https://trac.sagemath.org/ticket/28046"><b> #28046</b></a> Improving the weight_function check in _check_weight_function method
+                                  <br>
+                                  
+                              <a href="https://trac.sagemath.org/ticket/28098"><b> #28098</b></a> Shortest path fix for the case that no path exists
+                                  <br>
                           </div>
                       </li>
                       <li>
@@ -292,7 +306,18 @@ August 2018
                         <li>
                             <i class="fa fa-pencil bg-red-gradient text-white"></i>
                             <div class="timeline-item">
-                                <h3 class="timeline-header">Cythonization of various methods present in the path_enumeration module</sup> </h3>
+                                <h3 class="timeline-header">Cythonization of various methods present in the path_enumeration module</sup> 
+                                    <br>
+                                    Related Tickets:
+                                    <br>
+                                    <a href="https://trac.sagemath.org/ticket/28221"><b> #28221</b></a> minor improvement in bidirectional_dijkstra
+                                        <br>
+                                    <a href="https://trac.sagemath.org/ticket/28335"><b> #28335</b></a> Cythonize Yen_k_shortest_simple_paths and feng_k_shortest_simple_paths
+                                        <br>
+                                        <a href="https://trac.sagemath.org/ticket/28220"><b> #28220</b></a> Cythonize all_simple_paths, all_paths_iterator and _all_paths_iterator
+                                        <br>
+                                
+                                </h3>
                             </div>
                         </li>
                         <li>
@@ -311,6 +336,8 @@ August 2018
                                                        <br>
                                                        <br>
                                     sage: g.show()
+                                    <br>
+                                    <br>
                                     <img src="../../../../images/home/graph.png" alt="Graph">
                                     <br>
                                     sage: list(g.shortest_simple_paths(1, 10, by_weight = True, algorithm = "Yen", report_weight = True))
@@ -354,7 +381,21 @@ August 2018
                                     <br>
                                     2. Gang Feng Finding k shortest simple paths in directed graphs: A node classification algorithm ,
                                     2014.
-<br>
+                                    <br>
+                                    <br>
+                                    3. Takuya Akiba, Takanori Hayashi, Nozomi Nori, Yoichi Iwata and Yuichi Yoshida Efficient Top-k
+                                    Shortest-Path Distance Queries on Large Networks by Pruned Landmark Labeling in Proceedings
+                                    of the Twenty-Ninth AAAI Conference on Artificial Intelligence, 2015.
+                                    <br>
+                                    <br>
+                                    4. David Eppstein, Finding the k Shortest Paths, SIAM Journal on Computing, v.28 n.2, p.652-673,
+                                    April 1999.
+                                    <br>
+                                    <br>
+                                    5. Cohen, E.; Halperin, E.; Kaplan, H.; and Zwick, U. 2002. Reachability and distance queries via
+                                    2-hop labels. In SODA, 937–946.
+
+                                    <br>
                             </div>
                         </li>
                         
