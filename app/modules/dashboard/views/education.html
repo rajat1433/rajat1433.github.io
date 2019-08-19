@@ -40,12 +40,12 @@ August 2018
                                 under the guidance of Dr. David Coudert as my mentor under Google Summer of Code 2019 
                                 program.
                                 <br>
-                                The project spanning over a peroid of around 3 months, consisted in improving and 
-                                implementation of new algorithms for enumeration of k shortest paths between a 
-                                source and a destination vertex. As a first step certain methods were improved
+                                The project spanning over a period of 3 months, consisted in improving the implementation
+                                of existing algorithms and in implementing new algorithms for enumeration of k shortest simple 
+                                paths between a source and a destination vertex in a graph. As a first step certain methods were improved
                                 and cleaned which served as dependencies for implementing new algorithms for k shortest
                                 paths. Then at first Yen's algorithm[1] for k shortest simple paths in a graph was implemented
-                                followed by improvements such as Lawler's modification.
+                                followed by improvements such as Lawler's modification[6].
                                 Feng's algorithm[2] which finds k shortest paths in a directed graph efficiently was
                                 implemented as a second step. After implementing both of these methods they were tested
                                 for corner cases and other bugs. Then a separate module path_enumeration.pyx was made in
@@ -68,33 +68,33 @@ August 2018
                                             <a href="http://doc.sagemath.org/html/en/developer/index.html"> developer's guide</a> . 
                                           As I went deeper I started to work on the following tickets as described below.
                                       </h4>
-                                  <p class="text-bold">
+                                  
 
-                                  In<a href="https://trac.sagemath.org/ticket/24101"><b> #24101</b></a> I helped in implementing the Katz Centrality and Katz Matrix methods in the graph module to measure relative influence of a node in a graph network.
+                                  <a href="https://trac.sagemath.org/ticket/24101"><b> #24101</b></a> I helped in implementing the Katz Centrality and Katz Matrix methods in the graph module to measure relative influence of a node in a graph.
                                   <br>
                                   <br>
-                                  In<a href="https://trac.sagemath.org/ticket/24094"> <b> #24094</b></a> I helped in implementing the methods such as Effective Resistance, Resistance Matrix and Least Resistance Pairs. These methods help to find the effective resistance between a pair of nodes in a graph network by treating all edges as resistance of 1 ohm.
+                                  <a href="https://trac.sagemath.org/ticket/24094"> <b> #24094</b></a> I helped in implementing the methods such as Effective Resistance, Resistance Matrix and Least Resistance Pairs. These methods help to find the effective resistance between a pair of nodes in a graph network by treating all edges as resistance of 1 ohm.
                                   <br>
                                   <br>
-                                  In<a href="https://trac.sagemath.org/ticket/9707"> <b> #9707</b></a> I added a signless option to Laplacian Matrix which is popular now a days to measure signless laplacian.
+                                  <a href="https://trac.sagemath.org/ticket/9707"> <b> #9707</b></a> I added a signless option to Laplacian Matrix which is popular now a days to measure signless laplacian.
                                   <br>
                                   <br>
-                                  In<a href="https://trac.sagemath.org/ticket/27464"> <b> #27464</b></a> I created this ticket to fix a bug and also use the cython priority_queue instead of python heap to make bidirectional_dijkstra method faster and bug free.
+                                  <a href="https://trac.sagemath.org/ticket/27464"> <b> #27464</b></a> I created this ticket to fix a bug and also use the cython priority_queue instead of python heap to make bidirectional_dijkstra method faster and bug free.
                                   <br>
                                   <br>
-                                  In<a href="https://trac.sagemath.org/ticket/27491"> <b> #27491</b></a> I created this ticket to deprecate the parameter copy in networkx_graph method and also to remove some deprecated pieces of code.
+                                  <a href="https://trac.sagemath.org/ticket/27491"> <b> #27491</b></a> I created this ticket to deprecate the parameter copy in networkx_graph method and also to remove some deprecated pieces of code.
                                   <br>
                                   <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27507"><b> #27507</b></a> I created this ticket to fix some documentation errors in generic_graph.py module.
+                                  <a href="https://trac.sagemath.org/ticket/27507"><b> #27507</b></a> I created this ticket to fix some documentation errors in generic_graph.py module.
                                   <br>
                                   <br>
-                                    In<a href="https://trac.sagemath.org/ticket/24089"><b> #24089</b></a> I helped in implementing the methods such as max_common_neighbors and common_neighbors_matrix to find the number of common neighbors between 2 given nodes and find which nodes have the most common neighbors.
+                                  <a href="https://trac.sagemath.org/ticket/24089"><b> #24089</b></a> I helped in implementing the methods such as max_common_neighbors and common_neighbors_matrix to find the number of common neighbors between 2 given nodes and find which nodes have the most common neighbors.
                                   <br>
                                   <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27496"><b> #27496</b></a> I proposed and implemented the addition of parameter weight_function for constructing networkx graphs from sage graphs.
+                                  <a href="https://trac.sagemath.org/ticket/27496"><b> #27496</b></a> I proposed and implemented the addition of parameter weight_function for constructing networkx graphs from sage graphs.
                                   <br>
                                   <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27501"><b> #27501</b></a> I created this ticket to add parameters in all_paths method to make use of the multiedges present and return edges with or without labels. Parameters added were
+                                  <a href="https://trac.sagemath.org/ticket/27501"><b> #27501</b></a> I created this ticket to add parameters in all_paths method to make use of the multiedges present and return edges with or without labels. Parameters added were
                                     <br>
                                     <br>
                                     • use_multiedges – to take multiedges into account for enumerating the paths between source and the destination vertices.
@@ -104,28 +104,28 @@ August 2018
                                     • label – to use labels while reporting the edges.
                                     <br>
                                     <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27504"><b> #27504</b> </a> Similar to #27501 I added the option to make use of multiedges and report edges instead of vertices for paths in all_simple_paths method of digraph module.
+                                    <a href="https://trac.sagemath.org/ticket/27504"><b> #27504</b> </a> Similar to #27501 I added the option to make use of multiedges and report edges instead of vertices for paths in all_simple_paths method of digraph module.
                                     <br>
                                     <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27557"><b> #27557</b> </a> I created this ticket to add labels option to the spanning_trees method to include labels while reporting edges in the corresponding spanning trees.
+                                    <a href="https://trac.sagemath.org/ticket/27557"><b> #27557</b> </a> I created this ticket to add labels option to the spanning_trees method to include labels while reporting edges in the corresponding spanning trees.
                                     <br>
                                    <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27502"><b> #27502</b> </a> I created this ticket to report errors while using pagerank algorithm of Igraph package.
+                                    <a href="https://trac.sagemath.org/ticket/27502"><b> #27502</b> </a> I created this ticket to report errors while using pagerank algorithm of Igraph package.
                                     <br>
                                     <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27480"><b> #27480</b> </a> I created this ticket to implement the pagerank function for the sage module and make use of underlying networkx, numpy and scipy and igraph pagerank functionality.
+                                    <a href="https://trac.sagemath.org/ticket/27480"><b> #27480</b> </a> I created this ticket to implement the pagerank function for the sage module and make use of underlying networkx, numpy and scipy and igraph pagerank functionality.
                                     <br>
                                     <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27538"><b> #27538 </b> </a> I created this ticket to report the defect in cycle_basis method which gives wrong results in case of multiedges.
+                                    <a href="https://trac.sagemath.org/ticket/27538"><b> #27538 </b> </a> I created this ticket to report the defect in cycle_basis method which gives wrong results in case of multiedges.
                                     <br>
                                     <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27570"><b> #27570</b> </a> I created this ticket to implement a method for finding a minimal weight cycle basis in an undirected weighted graph which has applications in signals and circuit theory.
+                                    <a href="https://trac.sagemath.org/ticket/27570"><b> #27570</b> </a> I created this ticket to implement a method for finding a minimal weight cycle basis in an undirected weighted graph which has applications in signals and circuit theory.
                                     <br>
                                     <br>
-                                    In<a href="https://trac.sagemath.org/ticket/27600"><b> #27600</b> </a> I created this ticket to add parameters by_weight in min_spanning_tree method and fix some errors in the method which was present.
+                                    <a href="https://trac.sagemath.org/ticket/27600"><b> #27600</b> </a> I created this ticket to add parameters by_weight in min_spanning_tree method and fix some errors in the method which was present.
                                     <br>
                                     <br>
-                                </p>
+                                
                               
                               </div>
                               
@@ -331,7 +331,7 @@ August 2018
                                     <a href="https://trac.sagemath.org/ticket/28335"><b> #28335</b></a> Cythonize Yen_k_shortest_simple_paths and feng_k_shortest_simple_paths
                                         <br>
                                         <Br>
-                                        <a href="https://trac.sagemath.org/ticket/28220"><b> #28220</b></a> Cythonize all_simple_paths, all_paths_iterator and _all_paths_iterator
+                                    <a href="https://trac.sagemath.org/ticket/28220"><b> #28220</b></a> Cythonize all_simple_paths, all_paths_iterator and _all_paths_iterator
                                         <br>
                                         <br>
                                 </h3>
@@ -414,7 +414,11 @@ August 2018
                                     <br>
                                     5. Cohen, E.; Halperin, E.; Kaplan, H.; and Zwick, U. 2002. Reachability and distance queries via
                                     2-hop labels. In SODA, 937–946.
-
+                                    <br>
+                                    <br>
+                                    6. Lawler, EL (1972). "A procedure for computing the k best solutions to discrete optimization
+                                     problems and its application to the shortest path problem". Management Science, Theory Series.
+                                      18: 401–405. doi:10.1287/mnsc.18.7.401.
                                     <br>
                             </div>
                         </li>
