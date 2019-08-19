@@ -35,6 +35,7 @@ August 2018
                           <div class="timeline-item">
                             <h2 class="timeline-header"> <h1>OVERVIEW</h1> 
                                 <br>
+                                <h3>
                                 My journey of GSOC with SageMath has been a fun-filled and very productive as I spent my 
                                 summer in implementing and improving various algorithms in the graph module of SageMath
                                 under the guidance of Dr. David Coudert as my mentor under Google Summer of Code 2019 
@@ -52,7 +53,7 @@ August 2018
                                 the graph module of SageMath. All the methods related to shortest paths between source and 
                                 destination vertices were moved in this module. Then the last step was Cythonizing the
                                 methods present in this module for speed improvements.
-                            
+                                 </h3>
                             </h2>
                           </div>
                       </li>
@@ -266,40 +267,40 @@ August 2018
                                        a much lower average-case running time although the worst case time
                                        complexity remains the same.</h4>
                                   <p class="text-bold">
-                                        Procedure. FindCandidates(p)<br>
+                                        Procedure. FindCandidates(p)<br><br>
                                         Input:<br>
                                         &emsp;p: the shortest path removed from Q.<br>
-                                        &emsp;All nodes in G are green.<br>
+                                        &emsp;All nodes in G are green.<br><br>
                                         Result:<br>
-                                        &emsp;All candidate paths deviating from p are added to Q.<br>
+                                        &emsp;All candidate paths deviating from p are added to Q.<br><br>
                                          if (p = p1) then<br>
                                          &emsp;    u:= s<br>
                                          else<br>
                                          &emsp;    u := dev(p)<br>
                                          &emsp;Call FindEdgesToRemove(p) to find E<sup>d</sup>(p)<br>
-                                         &emsp;Remove all edges in E<sup>d</sup>(p)<br>
+                                         &emsp;Remove all edges in E<sup>d</sup>(p)<br><br>
                                          Set all nodes in sub<sub>p</sub>(s, u) to red<br>
                                          for each node v ∈ sub<sub>p</sub>(s, u)<br>
                                          &emsp;Call GetUpStreamNodes(v) to find Y<sub>v</sub><br>
-                                         &emsp;Set all nodes in Y<sub>v</sub> to yellow<br>
+                                         &emsp;Set all nodes in Y<sub>v</sub> to yellow<br><br>
                                          Let Y = U<sub>v</sub>Y<sub>v</sub> <br>
-                                        &emsp;where v∈sub<sub>p</sub>(s,u)<br>
+                                        &emsp;where v∈sub<sub>p</sub>(s,u)<br><br>
                                          Call FindExpressEdges(Y&ensp; ∪&ensp; {u})<br>
-                                         Set t to yellow<br>
+                                         Set t to yellow<br><br>
                                          while (TRUE) /* infinite loop */<br>
                                          &emsp;Remove edge (u, next<sub>p</sub>(u))<br>
                                          &emsp;Find a shortest u-t path r (yellow-node only)<br>
-                                         &emsp;Add the candidate path sub<sub>p</sub>(s, u) ⟗ r to Q<br>
+                                         &emsp;Add the candidate path sub<sub>p</sub>(s, u) ⟗ r to Q<br><br>
                                          &emsp;if (next<sub>p</sub>(u) = t)<br>
-                                        &emsp;&emsp;exit the while loop<br>
+                                        &emsp;&emsp;exit the while loop<br><br>
                                          &emsp;u := next<sub>p</sub>(u)/* advance to next node */<br>
                                          &emsp;Set u to red<br>
                                          &emsp;Call GetUpStreamNodes(u) to find Yu<br>
-                                         &emsp;Set all nodes in Y<sub>u</sub> to yellow<br>
+                                         &emsp;Set all nodes in Y<sub>u</sub> to yellow<br><br>
                                          &emsp;for each node v ∈ Y<sub>u</sub>&ensp; ∪&ensp;{u}<br>
                                          &emsp;&emsp;if |X<sub>v</sub>| > 0 then<br>
-                                         &emsp;&emsp;&emsp;recover all express edges in X<sub>v</sub><br>
-                                         &emsp;Call FindExpressEdges(Y<sub>u</sub> ∪ {u})<br>
+                                         &emsp;&emsp;&emsp;recover all express edges in X<sub>v</sub><br><br>
+                                         &emsp;Call FindExpressEdges(Y<sub>u</sub> ∪ {u})<br><br>
                                          Recover all express edges<br>
                                          Recover all removed edges<br>
                                          Set all yellow and red nodes back to green<br>
@@ -400,7 +401,7 @@ August 2018
                         <li>
                             <i class="fa fa-pencil bg-green-gradient text-white"></i>
                             <div class="timeline-item">
-                                
+                                <h3>
                                 First and foremost, I would like to thank my mentor, Dr. David Coudert for
                                  his dedicated guidance and encouragement throughout the duration of GSoC and also prior to it, when 
                                  I was learning SageMath development. I have become a lot better in writing codes in Python. Working with SageMath over the summer was a great learning experience 
@@ -409,6 +410,7 @@ August 2018
                                     <br>
                                     <br>
                                 And most importantly, I express my gratitude to the people behind Google Summer of Code. I had a very enjoyable experience working in GSoC 2019.
+                                </h3>
                             </div>
                         </li>
                         <li class="time-label">
@@ -419,7 +421,7 @@ August 2018
                         <li>
                             <i class="fa fa-pencil bg-green-gradient text-white"></i>
                             <div class="timeline-item">
-                                
+                                <h3>
                                 1. Yen, J. Y (1971), "Finding the k-Shortest Loopless Paths in a Network", Management Science, 17
                                     (11): 712–716, doi:10.1287/mnsc.17.11.712
                                     <br>
@@ -444,6 +446,7 @@ August 2018
                                     6. Lawler, EL (1972). "A procedure for computing the k best solutions to discrete optimization
                                      problems and its application to the shortest path problem". Management Science, Theory Series.
                                       18: 401–405. doi:10.1287/mnsc.18.7.401.
+                                      </h3>
                                     <br>
                             </div>
                         </li>
