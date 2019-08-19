@@ -68,33 +68,33 @@ August 2018
                                             <a href="http://doc.sagemath.org/html/en/developer/index.html"> developer's guide</a> . 
                                           As I went deeper I started to work on the following tickets as described below.
                                       </h4>
-                                  
+                                  <p class="text-bold">
 
-                                  <a href="https://trac.sagemath.org/ticket/24101"><b> #24101</b></a> I helped in implementing the Katz Centrality and Katz Matrix methods in the graph module to measure relative influence of a node in a graph.
+                                  <a href="https://trac.sagemath.org/ticket/24101"><b> <font color="blue">#24101</font></b></a> I helped in implementing the Katz Centrality and Katz Matrix methods in the graph module to measure relative influence of a node in a graph.
                                   <br>
                                   <br>
-                                  <a href="https://trac.sagemath.org/ticket/24094"> <b> #24094</b></a> I helped in implementing the methods such as Effective Resistance, Resistance Matrix and Least Resistance Pairs. These methods help to find the effective resistance between a pair of nodes in a graph network by treating all edges as resistance of 1 ohm.
+                                  <a href="https://trac.sagemath.org/ticket/24094"> <b><font color="blue">#24094</font> </b></a> I helped in implementing the methods such as Effective Resistance, Resistance Matrix and Least Resistance Pairs. These methods help to find the effective resistance between a pair of nodes in a graph network by treating all edges as resistance of 1 ohm.
                                   <br>
                                   <br>
-                                  <a href="https://trac.sagemath.org/ticket/9707"> <b> #9707</b></a> I added a signless option to Laplacian Matrix which is popular now a days to measure signless laplacian.
+                                  <a href="https://trac.sagemath.org/ticket/9707"> <b> <font color="blue">#9707</font></b></a> I added a signless option to Laplacian Matrix which is popular now a days to measure signless laplacian.
                                   <br>
                                   <br>
-                                  <a href="https://trac.sagemath.org/ticket/27464"> <b> #27464</b></a> I created this ticket to fix a bug and also use the cython priority_queue instead of python heap to make bidirectional_dijkstra method faster and bug free.
+                                  <a href="https://trac.sagemath.org/ticket/27464"> <b><font color="blue"> #27464</font></b></a> I created this ticket to fix a bug and also use the cython priority_queue instead of python heap to make bidirectional_dijkstra method faster and bug free.
                                   <br>
                                   <br>
-                                  <a href="https://trac.sagemath.org/ticket/27491"> <b> #27491</b></a> I created this ticket to deprecate the parameter copy in networkx_graph method and also to remove some deprecated pieces of code.
+                                  <a href="https://trac.sagemath.org/ticket/27491"> <b><font color="blue">#27491</font> </b></a> I created this ticket to deprecate the parameter copy in networkx_graph method and also to remove some deprecated pieces of code.
                                   <br>
                                   <br>
-                                  <a href="https://trac.sagemath.org/ticket/27507"><b> #27507</b></a> I created this ticket to fix some documentation errors in generic_graph.py module.
+                                  <a href="https://trac.sagemath.org/ticket/27507"><b><font color="blue">#27507</font> </b></a> I created this ticket to fix some documentation errors in generic_graph.py module.
                                   <br>
                                   <br>
-                                  <a href="https://trac.sagemath.org/ticket/24089"><b> #24089</b></a> I helped in implementing the methods such as max_common_neighbors and common_neighbors_matrix to find the number of common neighbors between 2 given nodes and find which nodes have the most common neighbors.
+                                  <a href="https://trac.sagemath.org/ticket/24089"><b> <font color="blue">#24089</font></b></a> I helped in implementing the methods such as max_common_neighbors and common_neighbors_matrix to find the number of common neighbors between 2 given nodes and find which nodes have the most common neighbors.
                                   <br>
                                   <br>
-                                  <a href="https://trac.sagemath.org/ticket/27496"><b> #27496</b></a> I proposed and implemented the addition of parameter weight_function for constructing networkx graphs from sage graphs.
+                                  <a href="https://trac.sagemath.org/ticket/27496"><b> <font color="blue">#27496</font></b></a> I proposed and implemented the addition of parameter weight_function for constructing networkx graphs from sage graphs.
                                   <br>
                                   <br>
-                                  <a href="https://trac.sagemath.org/ticket/27501"><b> #27501</b></a> I created this ticket to add parameters in all_paths method to make use of the multiedges present and return edges with or without labels. Parameters added were
+                                  <a href="https://trac.sagemath.org/ticket/27501"><b> <font color="blue">#27501</font></b></a> I created this ticket to add parameters in all_paths method to make use of the multiedges present and return edges with or without labels. Parameters added were
                                     <br>
                                     <br>
                                     • use_multiedges – to take multiedges into account for enumerating the paths between source and the destination vertices.
@@ -125,7 +125,7 @@ August 2018
                                     <a href="https://trac.sagemath.org/ticket/27600"><b> #27600</b> </a> I created this ticket to add parameters by_weight in min_spanning_tree method and fix some errors in the method which was present.
                                     <br>
                                     <br>
-                                
+                                </p>
                               
                               </div>
                               
@@ -155,8 +155,8 @@ August 2018
                           <div class="timeline-item">
                               <div class="callout callout-success col-md-10 col-sm-8 col-xs-12">
                                   <h4>Yen’s algorithm[1] computes source to destination k-shortest simple paths 
-                                      for a graph with non-negative edge cost. It can be broken down into 2 parts,
-                                      first part determining the first k-shortest path and the second part 
+                                      for a graph with non-negative edge cost. It can be split into 2 parts,
+                                      first part determining the first shortest path and the second part 
                                       determining all other k shortest paths. It employs any shortest path
                                       algorithm (for eg. Dijkstra’s algorithm) to find the best path and then
                                       proceeds to find k - 1 deviations of the best path. The
