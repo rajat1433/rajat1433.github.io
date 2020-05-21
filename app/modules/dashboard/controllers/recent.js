@@ -43,7 +43,7 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
           id: 4,
           heading: "Full Stack Website Development",
           title: "Health Care Portal and Database Maintenance System ",
-          description: "Made a Health Care Portal to enable users to maintain a complete record of their medical history. Also includes an Online Appointment system , each user has a unique login id, symptom tests , blogs etc. All their information was linked to their Aadhar Card number. The Records of each patient was stored in a Database using MongoDB. Technologies used were HTML, CSS, Angular, Javascript, PHP, MongoDB and WAMP Server.",
+          description: "Made a Health Care Portal to enable users to maintain a complete record of their medical history. Also includes an Online Appointment system , each user has a unique login id, symptom tests , blogs etc. All their information was linked to their Aadhar Card number. The Records of each patient was stored in a Database using MongoDB. Technologies used were HTML, CSS, React, Javascript, NodeJS and MongoDB.",
           image: "health",
           theme: "danger",
           url: "#",
