@@ -1,6 +1,6 @@
 ﻿/*==========================================================
 @invinciblerm
-August 2018
+Feb 2022
  ===========================================================*/
 
 dashboard.controller("ContactController", ['$rootScope', '$scope', '$state', '$location', 'dashboardService', 'Flash', '$http',
