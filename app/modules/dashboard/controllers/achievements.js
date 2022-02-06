@@ -41,7 +41,11 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
         {
             image: "tutor",
             desc: "Tutor for CSO 101 (Computer Programming) course for Even Semester 2017-18."
-        }  
+        },
+        {
+            image: "gs",
+            desc: "Winner in Goldman Sachs Quantify 2019."
+        }
     ];
     console.log("coming to Websites controller");
 
